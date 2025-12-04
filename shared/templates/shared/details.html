@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<title>Book Details</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container" style="margin-top: 30px;">
+        <section class="cover">
+        
+            <div style="display: inline; ">
+                <div class="card" style="margin-bottom: 20px;" >
+                    <div class="row no-gutters">
+                        <div class="col-sm-5" style="background: #868e96;">
+                            <img src="/media/{{ bookDetails.pic }}"class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Title: <b>{{ bookDetails.title }}</b></h5>
+                                <p class="card-text">Author: <b>{{ bookDetails.author }}</b></p>
+                                <h2 style=" color:blue">Book description</h2>
+                                <p class="card-text"><i>{{ bookDetails.summary }}</i></p>
+                                <p class="card-text">ISBN: <b>{{ bookDetails.ISBN }}</b></p>
+                                <p class="card-text">Publish year: <b>{{ bookDetails.publish_year }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <a class = "btn btn-danger" style="width: 100%;" href="{% url 'landingpage' %}">Back</a>
+            </div>
+        </section>
+    </div>
+
+{% endblock content %}
